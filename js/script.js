@@ -1,6 +1,6 @@
 const maravilhosasBox = document.querySelector('.maravilhosas__box');
 
-fetch('https://theblackwomanhistory.firebaseio.com/.json')
+fetch('https://theblackwomanhistory.firebaseio.com/.json') //<- API da internet
     .then(response => {
         return response.json();
     })
@@ -27,7 +27,7 @@ fetch('https://theblackwomanhistory.firebaseio.com/.json')
             } else {
                 imagemPerfil.src = 'img/img-mulher.png';
             }
-
+            //Solução da Lory (refatoração)
             // if (conteudo.metadata == undefined || conteudo.metadata.image == "") {
             //     imagemPerfil.src = 'img/img-mulher.png'
             // }
