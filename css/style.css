@@ -1,5 +1,7 @@
 /* --- MOBILE FIRST - iPhone 7 - width < 768px --- */
+
 /* --- GERAL --- */
+
 /*
 unidades preferidas para esse CSS
 margin, padding: rem
@@ -13,7 +15,8 @@ max-width: % ou px
 }
 
 html {
-    font-size: 10px; /* definir uma font-size padrão */
+    font-size: 10px;
+    /* definir uma font-size padrão */
 }
 
 body {
@@ -35,11 +38,13 @@ li {
 }
 
 /* define que as imagens tem que ter o tamanho máximo da div mãe */
+
 .img-responsive {
     width: 100%;
 }
 
 /* define o tamanho da caixa */
+
 .container {
     margin: 0 auto;
     width: 100%;
@@ -66,16 +71,15 @@ li {
     margin: 0 auto;
 }
 
-.btn_roxo:hover,
-.btn_roxo:focus {
+.btn_roxo:hover, .btn_roxo:focus {
     transform: translateY(-1rem);
-    box-shadow: 0 10px 10px rgba(0,0,0,.2);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
     background-color: rgb(192, 156, 188);
 }
 
 .btn_roxo:active {
     transform: translateY(-.5rem);
-    box-shadow: 0 5px 5px rgba(0,0,0,.2);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
 }
 
 .btn_center {
@@ -83,11 +87,12 @@ li {
 }
 
 /* --- NAV --- */
+
 .navegacao {
     background-color: #674582;
     color: white;
     text-transform: uppercase;
-    box-shadow: 0px 5px 5px rgba(0,0,0,.2);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .2);
     padding: 1.5rem;
     z-index: 99;
     position: fixed;
@@ -126,11 +131,11 @@ li {
     transition: right 1s;
 }
 
-.navegacao__itens li > a {
+.navegacao__itens li>a {
     transition: all .2s;
 }
 
-.navegacao__itens li > a:hover {
+.navegacao__itens li>a:hover {
     color: #C083B9;
 }
 
@@ -153,14 +158,12 @@ li {
     margin: 0 1rem;
 }
 
-
 /* --- HEADER --- */
+
 .header {
     min-height: 80vh;
     height: 500px;
-    background: linear-gradient(rgba(255, 0, 255, 0.2),
-                                rgba(255, 0, 255, 0.2)),
-                url(../img/turma6.jpeg);
+    background: linear-gradient(rgba(255, 0, 255, 0.2), rgba(255, 0, 255, 0.2)), url(../img/turma.jpeg);
     background-size: cover;
     background-position: center 14%;
     background-repeat: no-repeat;
@@ -184,6 +187,7 @@ li {
 }
 
 /* --- SECTION MARAVILHOSAS --- */
+
 .maravilhosas__titulo {
     font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
     color: #63458a;
@@ -213,16 +217,16 @@ li {
     transition: all .5s;
 }
 
-
 .maravilhosas__perfil a:hover {
     text-decoration: underline;
 }
 
 .maravilhosas__perfil a:hover img {
-    box-shadow: 0 3px 10px rgba(0,0,0,.2);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
 }
 
 /* --- FOOTER --- */
+
 .rodape {
     background-color: #323534;
     color: white;
@@ -242,11 +246,11 @@ li {
     padding: 1.5rem 0;
 }
 
-.rodape__principal > * {
+.rodape__principal>* {
     margin: 1rem 0;
 }
 
-.rodape__navegacao > li {
+.rodape__navegacao>li {
     font-size: 1.1rem;
     margin: 1rem;
 }
@@ -293,8 +297,10 @@ li {
 }
 
 /** ---- PERSONALIDADE ---- **/
+
 /* --- HEADER --- */
- .header-personalidade {
+
+.header-personalidade {
     display: flex;
     background-size: cover;
     align-items: flex-end;
@@ -312,6 +318,7 @@ li {
 }
 
 /* --- PEFIL DIVA--- */
+
 .secao-diva {
     display: flex;
     flex-direction: column;
@@ -366,13 +373,14 @@ li {
 }
 
 /* --- AUTORA --- */
+
 .secao-autora {
     background-color: #e4b7e5;
     display: flex;
     justify-content: center;
 }
 
-.secao-autora > div {
+.secao-autora>div {
     text-align: center;
     display: flex;
     align-items: center;
@@ -407,7 +415,9 @@ li {
 }
 
 /*** MEDIA QUERIES ***/
+
 /* TABLET */
+
 @media (min-width: 768px) {
     /* --- NAV --- */
     .navegacao__itens {
@@ -416,11 +426,9 @@ li {
         padding: 0;
         width: auto;
     }
-
     .navegacao__nav {
         margin-bottom: 0;
     }
-    
     .navegacao__itens ul {
         display: flex;
         justify-content: space-around;
@@ -428,79 +436,64 @@ li {
         align-items: center;
         text-align: center;
     }
-    
     .navegacao__itens li {
         font-size: 1.2rem;
         margin: 0 .6rem;
     }
-    
     .navegacao__menu-hamburguer {
         display: none;
     }
-
     /* --- HEADER --- */
     .header {
         min-height: 75vh;
         text-align: left;
         padding: 5rem 10rem;
     }
-
     .principal__titulo {
         font-size: 2.9rem;
     }
-    
     .principal__sub {
         font-size: 1.8rem;
     }
-
     .principal__btn {
         margin: 0;
     }
-
     /* --- SECTION MARAVILHOSAS --- */
     .maravilhosas {
         padding: 4rem 0;
     }
-
-    .maravilhosas__box > div {
+    .maravilhosas__box>div {
         max-width: 200px;
         margin: 5rem;
     }
-
     .maravilhosas__perfil p {
         font-size: 1.5rem;
         margin-top: 1rem;
     }
-
     /* --- FOOTER --- */
     .rodape {
         padding-top: 0;
     }
-
     .rodape__principal {
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
         width: 100%;
     }
-
     .rodape__logo img {
         max-width: 250px;
     }
-
-    .rodape__navegacao > li {
-        font-size: 1.5rem;;
+    .rodape__navegacao>li {
+        font-size: 1.5rem;
+        ;
     }
-   
     /** PERSONALIDADE **/
     /* --- OUTRA HEADER --- */
     .header-personalidade {
         padding: 0 20rem;
         display: flex;
-        
         align-items: flex-end;
     }
-
     .header-personalidade__titulo {
         font-size: 3.5rem;
         text-align: center;
@@ -526,7 +519,7 @@ li {
         font-size: 2.5rem;
         padding: 4rem;
     }
-    .secao-autora > div {
+    .secao-autora>div {
         flex-direction: row;
         text-align: left;
         justify-content: center;
@@ -535,10 +528,10 @@ li {
     .secao-autora__dados {
         margin: 0 3rem;
     }
-
 }
 
 /* DESKTOP */
+
 @media (min-width: 1440px) {
     .navegacao__box {
         max-width: 80%;

@@ -1,42 +1,44 @@
 const maravilhosasBox = document.querySelector('.maravilhosas__box');
 
-const maravilhosasPerfil = document.createElement('div');
-maravilhosasPerfil.setAttribute('class', 'img-responsive');
-
 fetch('https://theblackwomanhistory.firebaseio.com/.json')
     .then(response => {
         return response.json();
     })
     .then(data => {
         data.content.forEach(conteudo => {
-            console.log(conteudo)
             const perfil = document.createElement('div');
-            perfil.setAttribute('class', 'maravilhosas__perfil')
+            perfil.setAttribute('class', 'maravilhosas__perfil');
+
+            const ancoraPerfil = document.createElement('a');
+            ancoraPerfil.setAttribute('href', '#');
+
             const imagemPerfil = document.createElement('img');
             imagemPerfil.setAttribute('class', 'img-responsive');
-            // if (conteudo.metadata) {
-            //     if (conteudo.metadata.image) {
-            //         if (conteudo.metadata.image.url) {
-            //             imagemPerfil.src = conteudo.metadata.image.url;                    }
-            //     }
-            //     else {
-            //         imagemPerfil.src = 'img/img-mulher.png'
-            //     }
-            // } else {
+            imagemPerfil.setAttribute('alt', 'Foto da Personalidade')
+            if (conteudo.metadata) {
+                if (conteudo.metadata.image) {
+                    if (conteudo.metadata.image.url) {
+                        imagemPerfil.src = conteudo.metadata.image.url;
+                    }
+                }
+                else {
+                    imagemPerfil.src = 'img/img-mulher.png';
+                }
+            } else {
+                imagemPerfil.src = 'img/img-mulher.png';
+            }
+
+            // if (conteudo.metadata == undefined || conteudo.metadata.image == "") {
             //     imagemPerfil.src = 'img/img-mulher.png'
             // }
-            if (conteudo.metadata == undefined || conteudo.metadata.image == "") {
-                imagemPerfil.src = 'img/img-mulher.png'
-            }
-            else {
-                imagemPerfil.src = conteudo.metadata.image.url;
-            }
-
-
+            // else {
+            //     imagemPerfil.setAttribute('src', conteudo.metadata.image.url);
+            // }
             const namePerfil = document.createElement('p');
             namePerfil.textContent = conteudo.title;
 
-            perfil.appendChild(imagemPerfil);
+            ancoraPerfil.appendChild(imagemPerfil);
+            perfil.appendChild(ancoraPerfil);
             perfil.appendChild(namePerfil);
 
             maravilhosasBox.appendChild(perfil);
