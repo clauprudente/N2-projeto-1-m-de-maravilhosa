@@ -1,6 +1,8 @@
 const maravilhosasBox = document.querySelector('.maravilhosas__box');
 
-fetch('https://theblackwomanhistory.firebaseio.com/.json') //<- API da internet
+
+//fetch('https://theblackwomanhistory.firebaseio.com/.json') //<- API da internet
+fetch('http://localhost:5001/maravilhosas') //API NO SERVIDOR LOCAL
     .then(response => {
         return response.json();
     })
