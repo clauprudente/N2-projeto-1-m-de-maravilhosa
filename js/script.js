@@ -44,7 +44,7 @@ fetch('http://localhost:5001/maravilhosas') //API NO SERVIDOR LOCAL
             perfil.appendChild(namePerfil);
 
             maravilhosasBox.appendChild(perfil);
-
+            
         })
     })
     .catch(erro => {
