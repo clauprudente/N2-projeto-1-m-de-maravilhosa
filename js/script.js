@@ -67,8 +67,8 @@ function cadastrarPerfil() {
                 'Content-type': 'application/json'
             },
             body: JSON.stringify({
-                'content.title': nome,
-                'content.metadata.image': endImagem,
+                'title': nome,
+                'metadata': { 'image': { 'url': endImagem } }
             })
         })
             .then(response => {
