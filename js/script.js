@@ -44,9 +44,42 @@ fetch('http://localhost:5001/maravilhosas') //API NO SERVIDOR LOCAL
             perfil.appendChild(namePerfil);
 
             maravilhosasBox.appendChild(perfil);
-            
         })
     })
     .catch(erro => {
         console.log(erro)
     })
+
+function cadastrarPerfil() {
+    const botao = document.querySelector('#submit')
+    botao.addEventListener("click", evento => {
+        evento.preventDefault();
+
+        const nome = document.querySelector('[name="nome"]').value
+        const endImagem = document.querySelector('[name="imagem"').value
+
+        console.log(nome, endImagem);
+
+        fetch('http://localhost:5001/maravilhosas', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                'content.title': nome,
+                'content.metadata.image': endImagem,
+            })
+        })
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .then(erro => {
+                console.log(erro);
+            })
+    }
+    )
+}
