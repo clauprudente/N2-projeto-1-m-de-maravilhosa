@@ -17,25 +17,25 @@ fetch('http://localhost:5001/maravilhosas') //API NO SERVIDOR LOCAL
             const imagemPerfil = document.createElement('img');
             imagemPerfil.setAttribute('class', 'img-responsive');
             imagemPerfil.setAttribute('alt', 'Foto da Personalidade')
-            if (conteudo.metadata) {
-                if (conteudo.metadata.image) {
-                    if (conteudo.metadata.image.url) {
-                        imagemPerfil.src = conteudo.metadata.image.url;
-                    }
-                }
-                else {
-                    imagemPerfil.src = 'img/img-mulher.png';
-                }
-            } else {
-                imagemPerfil.src = 'img/img-mulher.png';
-            }
+            // if (conteudo.metadata) {
+            //     if (conteudo.metadata.image) {
+            //         if (conteudo.metadata.image.url) {
+            //             imagemPerfil.src = conteudo.metadata.image.url;
+            //         }
+            //     }
+            //     else {
+            //         imagemPerfil.src = 'img/img-mulher.png';
+            //     }
+            // } else {
+            //     imagemPerfil.src = 'img/img-mulher.png';
+            // }
             //Solução da Lory (refatoração)
-            // if (conteudo.metadata == undefined || conteudo.metadata.image == "") {
-            //     imagemPerfil.src = 'img/img-mulher.png'
-            // }
-            // else {
-            //     imagemPerfil.setAttribute('src', conteudo.metadata.image.url);
-            // }
+            if (conteudo.metadata == undefined || conteudo.metadata.image == "" || conteudo.metadata.image.url == "") {
+                imagemPerfil.src = 'img/img-mulher.png'
+            }
+            else {
+                imagemPerfil.setAttribute('src', conteudo.metadata.image.url);
+            }
             const namePerfil = document.createElement('p');
             namePerfil.textContent = conteudo.title;
 
@@ -68,7 +68,11 @@ function cadastrarPerfil() {
             },
             body: JSON.stringify({
                 'title': nome,
-                'metadata': { 'image': { 'url': endImagem } }
+                'metadata': {
+                    'image': {
+                        'url': endImagem
+                    }
+                }
             })
         })
             .then(response => {
@@ -80,6 +84,8 @@ function cadastrarPerfil() {
             .then(erro => {
                 console.log(erro);
             })
+
+        window.location.reload();
     }
     )
 }
