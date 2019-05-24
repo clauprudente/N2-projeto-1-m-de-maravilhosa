@@ -39,9 +39,17 @@ fetch('http://localhost:5001/maravilhosas') //API NO SERVIDOR LOCAL
             const namePerfil = document.createElement('p');
             namePerfil.textContent = conteudo.title;
 
+            const botao = document.createElement('input');
+            botao.setAttribute('value', 'Remover');
+            botao.setAttribute('type', 'button');
+            botao.setAttribute('class', 'btn_roxo');
+            botao.setAttribute('data-id', conteudo.id)
+            botao.addEventListener('click')
+
             ancoraPerfil.appendChild(imagemPerfil);
             perfil.appendChild(ancoraPerfil);
             perfil.appendChild(namePerfil);
+            perfil.appendChild(botao)
 
             maravilhosasBox.appendChild(perfil);
         })
@@ -88,4 +96,25 @@ function cadastrarPerfil() {
         window.location.reload();
     }
     )
+}
+
+function removerPerfil() {
+    console.log('oi')
+
+    fetch('http://localhost.com/maravilhosas' + botao.getAttribute('data-id'), {
+        method: 'DELETE',
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "id": botao.getAttribute('data-id')
+        })
+            .then(() => {
+                console.log('sucesso')
+            })
+            .catch(erro => {
+                console.log(erro)
+            })
+    })
 }
